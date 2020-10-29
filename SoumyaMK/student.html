@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title> Student Information </title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body style= "background-color: bisque;">
+    <h1 > <center>Student Information </center></h1>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <form>
+                        <br/>
+                        <div>
+                            <input type= 'text' id= 'no' placeholder= 'Student Id' pattern= "[0-9]" required> </input><br/><br/>
+                        </div>
+                        <div>
+                            <input type= 'text' id= 'name' placeholder= 'Student Name' pattern= "[A-Za-z]" required> </input><br/><br/>
+                        </div>
+                        <div>
+                            <input type= 'text' id= 'class' placeholder= 'Class' pattern= "[0-9]" required> </input><br/><br/>
+                        </div>
+                        <div>
+                            <input type= 'date' id= 'admDate' placeholder= 'Admission date'  required> </input><br/><br/> 
+                            <!-- max= "2020-10-29" -->
+                        </div>
+                        <div>
+                            <input type= 'text' id= 'mobile' placeholder= 'Mobile Number' pattern= "[0-9]" maxlength= '10' required> </input><br/><br/>
+                        </div>
+                        <div>
+                            <input type= 'text' id= 'guardian' placeholder= 'Guardian Name' pattern= "[A-Za-z]" required> </input><br/><br/>
+                        </div>
+                        <button style= 'margin-left: 700px;' onClick= 'addInfo()'> Add </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+       
+    </div>
+    <table border= '2' style= 'margin-top: 20px; width: 60%; margin-left: 350px; text-align: center; font-size: 16px; color:black;'id= 'display'>
+        <thead>
+            <tr>
+                <th style="padding: 10px;"> Student Id</th>
+                <th style="padding: 10px;"> Student Name</th>
+                <th style="padding: 10px;"> Class</th>
+                <th style="padding: 10px;">Admission date</th>
+                <th style="padding: 10px;">Mobile Number</th>
+                <th style="padding: 10px;">Guardian Name</th>
+                <th style="padding: 10px;"> Action </th>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        let student= []
+        let selectedRow = null
+
+        function addInfo() {
+            let list1  = []
+            let list2  = []
+            let list3  = []
+            let list4  = []
+            let list5  = []
+            let list6  = []
+
+            let n= 1
+            let x= 0
+
+            let addRow = document.getElementById('display')
+            let newRow = addRow.insertRow(n)
+
+            list1[x] = document.getElementById('no').value
+            list2[x] = document.getElementById('name').value
+            list3[x] = document.getElementById('class').value
+            list4[x] = document.getElementById('admDate').value
+            list5[x] = document.getElementById('mobile').value
+            list6[x] = document.getElementById('guardian').value
+
+            if(list1[x] === '' && list2[x] === '' && list3[x] === '' && list4[x] === '' && list5[x] === '' && list6[x] === ''){
+                alert('Enter all the details')
+            }else{
+                let cell1 = newRow.insertCell(0)
+                let cell2 = newRow.insertCell(1)
+                let cell3 = newRow.insertCell(2)
+                let cell4 = newRow.insertCell(3)
+                let cell5 = newRow.insertCell(4)
+                let cell6 = newRow.insertCell(5)
+                let cell7 = newRow.insertCell(6)
+
+                cell1.innerHTML= list1[x]
+                cell2.innerHTML= list2[x]
+                cell3.innerHTML= list3[x] 
+                cell4.innerHTML= list4[x]
+                cell5.innerHTML= list5[x]
+                cell6.innerHTML= list6[x]
+                cell7.innerHTML = `<a onClick="removeInfo(this)">Delete</a>`;
+                n++
+                x++
+                resetForm()
+            } 
+        }
+
+        function removeInfo(td) {
+            if (confirm('Are you sure to delete this record ?')) {
+                row = td.parentElement.parentElement
+                document.getElementById('display').deleteRow(row.rowIndex)
+                resetForm()
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('no').value= ''
+            document.getElementById('name').value= ''
+            document.getElementById('class').value= ''
+            document.getElementById('admDate').value= ''
+            document.getElementById('mobile').value= ''
+            document.getElementById('guardian').value= ''
+            selectedRow = null;
+        }
+
+        function render() {
+            let formData= ''
+            for(let i=0; i< student.length; i++){
+                formData += '<div style= "border: 1px solid; font-color: blue; padding: 5px; margin: 2px;"><br/>'+ student[i]['no'] 
+                            + student[i]['name'] 
+                            + student[i]['class'] 
+                            + student[i]['admDate']  
+                            + student[i]['mobile'] 
+                            + student[i]['guardian']
+                document.getElementById('display').innerHTML= formData
+            }
+        }
+    </script>
+</body>
+</html>
+
