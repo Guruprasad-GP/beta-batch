@@ -1,0 +1,65 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+    <h1>Paint-Details</h1>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault(); SubmitForm(); resetform()" autocomplete="off">
+                    <div>
+                        <label>Paint Name</label>
+                        <p id="p" style="display: none;" class="alert alert-info">Only characters are allowed</p>
+                        <input type="text" name="paintName" oninput="p_check()" id="paintName" placeholder="please enter paint name" required> 
+                    </div>
+                    <div>
+                        <label>Artist Name</label>
+                        <p id="a" style="display: none;" class="alert alert-info">Only characters are allowed</p>
+                        <input type="text" name="artist" oninput="a_check()" id="artist" placeholder="please enter artist name" required>
+                    </div>
+                    <div>
+                        <label>Painting-ID</label>
+                        <input type="number" name="pid" id="pid" placeholder="please enter paint-id" required>
+                    </div>
+                    <div>
+                        <label>Painting Date</label>
+                        <input type="date" max="2020-10-28" name="pdate" id="pdate" placeholder="please enter painting date" required>
+                    </div>
+                    <div>
+                        <label>Painting Price</label>
+                        <p id="pp" style="display: none;" class="alert alert-info">pls enter price</p>
+                        <input type="number" name="price" oninput="pp_check" id="price" placeholder="please enter paint-price" required>
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="Paint-Info">
+                    <thead>
+                        <tr>
+                            <th>Paint Name</th>
+                            <th>Artist Name</th>
+                            <th>Painting ID</th>
+                            <th>Painting Date</th>
+                            <th>Painting Price</th>
+                    
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
