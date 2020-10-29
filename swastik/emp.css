@@ -1,0 +1,153 @@
+body
+{
+    background-color: #e7e7e727;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vh;
+    margin: 0;
+    color: blanchedalmond;
+  }
+
+  .left-col
+  {
+    margin-top: 15px;
+   background-image: url(one.jpg);
+    border-radius: 20px;
+    box-shadow: rgb(102, 161, 238);
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+    padding: 30px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+
+  .form-control
+  {
+    color: blanchedalmond;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  h3
+  {
+    border-bottom: 4px dotted rgb(241, 241, 241);
+    color: blanchedalmond;
+  }
+
+  input
+  {
+    border: 2px solid white;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+
+  }
+
+
+  input:hover
+  {
+    border: 2px solid rgb(107, 105, 112);
+  }
+
+
+
+  button
+  {
+    width: 40%;
+    color: azure;
+    background-color:#0612b9;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+
+
+  button:hover
+   {
+      background-color: rgb(53, 106, 150);
+    }
+  #emp-list
+  {
+  margin-top: -360px;
+  }
+
+  td, th
+ {
+  color: black;
+  border: 1px solid #202020;
+  text-align: left;
+  padding: 8px;
+
+ }
+
+.material-icons
+{
+  color: crimson;
+  cursor: pointer;
+}
+
+p.validation-error{
+  color:   red;
+  margin-left: 5px;
+}
+
+
+.hide{
+  display:none;
+}
+
+.hide-1{
+  display:none;
+}
+
+
+
+#Employeedesignation{
+  border: 2px solid rgb(124, 127, 128);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 10px;
+
+
+    width:500px;
+    height: 42px;
+
+
+}
+#subtn{
+  text-align: center;
+  margin-left: 150px;
+
+}
+
+.delall{
+  text-align: center;
+  margin-left: 170px;
+
+}
+#e{
+
+  color: #3be5f1;
+}
+
+#p{
+
+  color: #3be5f1;
+}
