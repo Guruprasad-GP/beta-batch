@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+    <h1>Patient Registration Form</h1>
+    <table style='border:1px solid black';>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault(); SubmitForm(); resetform()" autocomplete="off" >
+                    <div>
+                        <label style='color:blue;'>PatientId</label>
+                        <p id="pid" style="display: none;" class="alert alert-info">Please Enter Id</p>
+                        <input type="text" name="PatientId" oninput="id_check()" id="PatientId" placeholder="Enter PatientId" required> 
+                    </div>
+                    <div>
+                        <label style='color:blue;'>PatientName</label>
+                        <p id="valid" style="display: none;" class="alert alert-info">Enter Only Characters</p>
+                        <input type="text" name="PatientName" oninput="validate()" id="PatientName" placeholder="Enter PatientName" required>
+                    </div>
+                    <div>
+                        <label style='color:blue;'>PhoneNumber</label>
+                        <input type="number" name="phone"   id="phone" placeholder=" Enter PhoneNumber" required>
+                    </div>
+                    <div>
+                        <label style='color:blue;'>HospitalName</label>
+                        <p id="valid" style="display: none;" class="alert alert-info">Please Enter HospitalName</p>
+                        <input type="text"  name="hname" id="hname" oninput="validate()" placeholder="Enter HospitalName" required>
+                    </div>
+                    <div>
+                        <label style='color:blue;'>City</label>
+                        <p id="valid" style="display: none;" class="alert alert-info">Please enter City</p>
+                        <input type="text" name="city" oninput="validate()" id="city" placeholder="Enter City" required>
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Add">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="PatientInfo">
+                    <thead>
+                        <tr>
+                            <th>PatientId</th>
+                            <th>PatientName</th>
+                            <th>PhoneNumber</th>
+                            <th>HospitalName</th>
+                            <th>City</th>
+                            <th>Action</th>
+                    
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

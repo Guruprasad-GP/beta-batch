@@ -1,0 +1,51 @@
+  
+body > table{
+    width: 100%;
+    margin-top: 30px;
+}
+
+table.list{
+    width:100%;
+    margin-top: -200px;
+}
+
+th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+    text-align: center;
+    color:blue;
+}
+td{
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+        background-color: lightgray;
+
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    width: 20%;
+    background-color:lightblue;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 160px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10px;
+    color:blue;
+}
