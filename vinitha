@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Edit Remove HTML Table Row</title>
+<link rel="stylesheet" href="vini.css">
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+    <body>
+        <div class="container">
+            <br>
+            <h1 class="text-sucess text-center">Bank Account Details</h1>
+             <br>
+         <div class="col-lg-8 m-auto d-block">
+            <form action="#" onsubmit="return validation()" class="bg-light">
+                <div class="form-group"><br>
+                    <label>Customer name: </label>
+                    <br>
+                    <input type="text"class="box" name="customername" style="width: 600px; text-decoration-style: "bold ;border-radius: 13px; height: 40px;" id="customername" placeholder="Enter customer name" reqired autocomplete="off">
+                    <span id="customername" class="text-danger font-weight-bold"></span>
+                </div>
+                    <div class="form-group">
+                    <label>Account number: </label><br>
+                    <input type="number"name="accountnumber"  style="width: 600px; text-decoration-style:" bold ; border-radius: 13px; height: 40px;" id="accountnumber"  placeholder="Enter  customer Account number" autocomplete="off">
+                    <span id="accountnumber" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <div class="form-group">
+                    <label>Account created  on: </label><br>
+                    <input type="date" name="accountcredit" style="width: 600px;  text-decoration-style: bold ;border-radius: 13px; height: 40px; "id="accountcredit" placeholder="Enter customer Account created" autocomplete="off">
+                    <i class="fa fa-key-o"></i>
+                    <span id="accountcredit" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <div class="form-group">
+                    <label>Location: </label><br>
+                    <input type="text" name="location"style="width: 600px;" "text-decoration-style: bold" ;border-radius: 13px; height: 40px;"id="location" placeholder="Enter Location of customer " autocomplete="off">
+                    <i class="fa fa-key-o"></i>
+                    <span id="location" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <div class="form-group">
+                    <label>Account Type: </label><br>
+                    <input type="text" name="accounttype"style="width: 600px; text-decoration-style: "bold ;border-radius: 13px; height: 40px;id="accounttype" placeholder="Enter Customer Account Type">
+                    <i class="fas fa-eye" ></i>
+                    <span id="accounttype" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <div class="form-group">
+                    <label> Account Balance: </label><br>
+                    <input type="number" name="accountbalance" style="width: 600px;text-decoration-style: "bold" ; border-radius: 13px; height: 40px;id="accountbalance" placeholder="Enter Customer Account Balance">
+                    <span id="accountbalance" class="text-danger font-weight-bold"></span>
+                    </div>
+                  
+        </div>
+
+                </form>
+
+            </div>
+            <br><br>
+             <center> <button style="background-color:#DCF8C6;border-radius: 10px; width: 60px;" onclick="addHtmlTableRow();" value="submit"onclick="submitForm()">Add &nbsp</button>
+                <input type="reset" style="background-color:#DCF8C6;border-radius: 10px; width: 60px;"  value="clear" >
+               
+               </center>
+                 
+          <div class="container">
+            <div class="tab tab-1"><br>
+               <center><table style="text-decoration-style: "bold ; id="table" border="1">
+                    <tr>
+                        <th >Customer name</th>
+                        <th>Account number</th>
+                        <th>Account created on</th>
+                        <th>Location</th>
+                        <th>Account Type</th>
+                        <th>Account Balance</th>
+                        <th>Delete</th>
+                    </tr>
+                   
+                </table></center>
+            </div>
+        </div><br><br>
+       <center> <button style="background-color:#DCF8C6;border-radius: 10px; width: 80px;" onclick="removeSelectedRow(); " >Remove</button>   </center>
+        
+        <script type="text/javascript">
+          function validation()
+          {
+            
+          }
+            
+            var rIndex,
+                table = document.getElementById("table");
+
+              
+               
+            
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    customername = document.getElementById("customername").value,
+                    accountnumber = document.getElementById("accountnumber").value,
+                   
+                   accountcredit = document.getElementById("accountcredit").value,
+                   location= document.getElementById("location").value,
+                    accounttype = document.getElementById("accounttype").value,
+                   accountbalance= document.getElementById("accountbalance").value;
+            
+            
+                if(customername === ""){
+                   alert("customer name Connot Be Empty");
+                    isEmpty = true;
+                  
+                }
+                if(accountnumber=== ""){
+                    alert("Account Number Connot Be Empty");
+                    isEmpty = true;
+                }
+                 if(accountcredit=== ""){
+                    alert("Account created Connot Be Empty");
+                    isEmpty = true;
+                }
+                 if(location === ""){
+                    alert("Location Connot Be Empty");
+                    isEmpty = true;
+                }
+                if(accounttype=== ""){
+                    alert("Account Type Connot Be Empty");
+                    isEmpty = true;
+                }
+                if(accountbalance=== ""){
+                    alert("Account Balance Connot Be Empty");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+            
+          
+            function addHtmlTableRow()
+            {
+                
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5),
+                     customername = document.getElementById("customername").value,
+                    accountnumber = document.getElementById("accountnumber").value,
+                  
+                   accountcredit = document.getElementById("accountcredit").value,
+                    location= document.getElementById("location").value;
+                    accounttype = document.getElementById("accounttype").value,
+                   accountbalance= document.getElementById("accountbalance").value;
+
+                cell1.innerHTML = customername;
+                cell2.innerHTML = accountnumber;
+                cell3.innerHTML = accountcredit;
+                cell4.innerHTML = location;
+                cell5.innerHTML =  accounttype;
+                cell6.innerHTML = accountbalance;
+            
+                selectedRowToInput();
+            }
+            }
+         
+            function selectedRowToInput()
+            {
+                
+                for(var i =1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                    
+                      rIndex = this.rowIndex;
+                      document.getElementById("customername").value = this.cells[1].innerHTML;
+                      document.getElementById("accountnumber").value = this.cells[2].innerHTML;
+                      document.getElementById("accountcredit").value = this.cells[3].innerHTML;
+                       document.getElementById("location").value = this.cells[4].innerHTML;
+                      document.getElementById("accounttype").value = this.cells[5].innerHTML;
+                      document.getElementById("accountbalance").value = this.cells[6].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+           
+            
+            
+            function removeSelectedRow()
+            {
+                
+                table.deleteRow(rIndex);
+                // clear input text
+                /*document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("age").value = "";*/
+                document.getElementById("customername").value = "";
+                      document.getElementById("accountnumber").value = "";
+                      document.getElementById("accountcredit").value = "";
+                       document.getElementById("location").value = "";
+                      document.getElementById("accounttype").value = "";
+                      document.getElementById("accountbalance").value = "";
+            }
+             function sumbitForm()
+            {
+                document.getElementById("customername").value='';
+                document.getElementById("accountnumber").value='';
+                document.getElementById("accountcredit").value='';
+                document.getElementById("location").value='';
+                document.getElementById("accounttype").value='';
+                document.getElementById("accountbalance").value='';
+            }
+           
+        </script>
+        
+    </body>
+</html>
