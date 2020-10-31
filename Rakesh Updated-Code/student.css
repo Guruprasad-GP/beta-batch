@@ -1,0 +1,32 @@
+body{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif sans-serif;
+    font-size: 13px;
+}
+
+
+input{
+    width: 530px;
+    padding: 15px;
+    margin-left: 470px;
+    padding-left: 30px;
+    padding-right: 15px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size:16px;
+ 
+}
+
+button {
+    height: 32px;
+    width: 140px;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    color: #222222;
+    margin-top: 30px;
+    border: 1px solid #e4e4e4;
+    margin-bottom: 10px;
+}
