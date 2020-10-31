@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State Information</title>
+    <link rel="stylesheet" href="State_Information.css">
+    <script src="state_information.js"></script>
+</head>
+<body>
+    <h1>State Information</h1>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Name of the State</label>
+                        <p id="state-alert" style="display:none;color:#fff;">Only characters are allowed</p>
+                        <input type="text"  id="state-name" placeholder="Enter your State Name"  oninput="validation()" required>
+                    </div>
+                    <div>
+                        <label>Number of Districts</label>
+                        <input type="number" id="district" placeholder="Enter Number of Districts" min="1" required>
+                    </div>
+                    <div>
+                        <label>State Capital</label>
+                        <p id="capital" style="display:none;color:#fff;">Only characters are allowed</p>
+                        <input type="text"  id="capital-name" placeholder="Capital of your State" oninput="validation()" required>
+                    </div>
+                    <div>
+                        <label>State Bird</label>
+                        <p id="bird-alert" style="display:none;color:#fff;">Only characters are allowed</p>
+                        <input type="text" id="bird-name" placeholder="Enter your State Bird" oninput="validation()" required>
+                    </div>
+                    <div>
+                        <label>PinCode</label>
+                        <p id="pin-alert" style="display:none;color:#fff;">Only Six Digits are Allowed</p>
+                        <input type="number" id="pin-code" placeholder="PinCode of your State" oninput="validation()" required>
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="state-information">
+                    <thead>
+                        <tr>
+                            <th>Name of the State</th>
+                            <th>Number of District</th>
+                            <th>State Capital</th>
+                            <th>State Bird</th>
+                            <th>PinCode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html> 
