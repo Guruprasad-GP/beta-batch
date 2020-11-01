@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration Form</title>
+    <link rel="stylesheet" href="emp.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="mainContainer">
+                    <div class="leftCol">
+                        <form onsubmit="event.preventDefault(); " class="form">
+                            <h3 class="heading">
+                                <span class="material-icons">
+                                    directions_walk
+                                </span>
+                                Employee Registration Form
+                            </h3>
+                            <!-- employee name -->
+                            <div class="formControl">
+                                <label for='employeeName'>Employee Name</label>
+                                <input type="text" id="employeeName" placeholder="Enter Employee Name"
+                                    oninput="validate1()" required>
+                                <!-- error msg -->
+                                <p id="emp" style="display: none;" class="alert alert-info">Only characters are allowed
+                                </p>
+                            </div>
+                            <!-- employee id -->
+                            <div class="formControl">
+                                <label for='employeeId'>Employee Id</label>
+                                <input type="number" id="employeeId" placeholder="Enter your employee id">
+                                <p class="validation-error hide-1" id="fullNameValidationError">Employee id Required</p>
+                            </div>
+                            <!-- employee  designation-->
+                            <div class="formControl">
+                                <label for='employeeDesignation'>Employee Designation</label> <br>
+                                <!-- <input type="" id="employeeDesignation"  > -->
+                                <select name=" " id="employeeDesignation">
+                                    <option value="Software Engineer ">Software Engineer</option>
+                                    <option value=" Intern">Intern</option>
+                                    <option value=" Team Lead">Team Lead</option>
+                                    <option value="Support Engineer ">Support Engineer</option>
+                                    <option value=" Other">Other</option>
+                                </select>
+                            </div>
+                            <!-- employee  year of join -->
+                            <div class="formControl">
+                                <label for='Employeejoindate'>Year of Join</label>
+                                <input id="empJoin" type="number" min="2017" max="2020" placeholder="2018" />
+                                <!-- <p class="validation-error hide" id="fullNameValidationError">Employee Name Required</p> -->
+                            </div>
+                            <!-- employee mobile number -->
+                            <div class="formControl">
+                                <label for='Employeephone'>Phone Number</label>
+                                <input type="tel" id="phone" placeholder="123-45-678" min="10" max="12"
+                                    oninput="validate1()">
+                                <p id="phn" style="display: none;" class="alert alert-info">only numbers are allowed</p>
+                            </div>
+                            <div class="formControl">
+                                <label for='employeeName'>Employee Address</label>
+                                <textarea id="empAdd" rows="4" cols="60">
+                                    </textarea>
+                            </div>
+                            <button onclick="onFormSubmit()" id="subtn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <table class="list" id="empList">
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Employee ID</th>
+                            <th>Designation ID</th>
+                            <th>Join Date</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <br>
+                        </tr>
+                        <!-- <button onclick=""  class="delrow">Delete Row</button>    -->
+                    </thead>
+                    <tbody>
+                        <button onclick="deleteAll()" class="delAll">Delete All</button>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="emp.js"></script>
+</body>
+</html>
