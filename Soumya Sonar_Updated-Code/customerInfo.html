@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Call Centre Query Form</h1>
+    </header>
+    <form onsubmit="onSubmitInput(),resetFormColor();event.preventDefault()">
+        <label for="name">Name:</label><br><input class="input" type="text" id="name" oninput="return nameValidation()"
+            required autocomplete="off" placeholder="Enter Customer Name"></span>
+        <span id='username' style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <label for="customerId">Customer ID:</label><br><input class="input" type="number" id="customerId" required
+            autocomplete="off" placeholder="Enter Customer ID" oninput="return customerIdValidation()">
+        <span id="cid" style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <label for="time">Time:<br></label><input class="input" type="time" id="time" required autocomplete="off"
+            oninput="return timeValidation()">
+        <span id="timeValidation" style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <label for="date">Date:</label><input class="input" type="date" id="date" required autocomplete="off"
+            oninput="return dateValidation()">
+        <span id="dateValidation" style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <label for="address">Place: </label><br><input class="input" type="text" id="address" required
+            autocomplete="off" placeholder="Enter Customer Place" oninput="return addressValidation()">
+        <span id="addressCheck" style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <label for="queryDetails"><b></b>Question/Query:</b></label><br><textarea class="input-query" id="queryDetails"
+            required autocomplete="off" placeholder="Enter Customer Questions or Query?"
+            oninput="return queryValidation()"></textarea>
+        <span id="query" style="font-weight: 500; color: red;"></span>
+        <br><br>
+        <center class="button-position">
+            <input class="button" type="submit" value="Submit">
+        </center>
+    </form>
+
+    <div id="right-position">
+        <table id="deleteOne">
+            <thead>
+                <tr>
+                    <th style="padding-right: 30px;">Name</th>
+                    <th>Customer ID</th>
+                    <th style="padding-right: 10px;">Time</th>
+                    <th style="padding-right: 50px;">Date</th>
+                    <th style="padding-right: 40px;">Address</th>
+                    <th style="padding-right: 50px;">Question/Query</th>
+                    <th style="padding-right: 20px;">Action</th>
+                </tr>
+            <tbody>
+            </tbody>
+            </thead>
+        </table>
+    </div>
+</body>
+
+</html>
